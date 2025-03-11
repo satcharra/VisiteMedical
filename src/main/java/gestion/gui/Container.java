@@ -9,6 +9,7 @@ import gestion.entities.Visiter;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.event.*;
 import java.util.List;
 
@@ -19,7 +20,6 @@ public class Container {
     private JButton MedecinBtn;
     private JTable VisiteTable;
     private JTextField VisiteSearch;
-    private JButton searchVisiteBtn;
     private JButton nouveauVisiteButton;
     private JPanel VisitePanel;
     private JPanel PatientPanel;
@@ -73,6 +73,8 @@ public class Container {
         afficherMedecin();
         afficherPatient();
         afficherVisite();
+//        recherche
+        searchFunction();
 
 //        update et delete button
 
@@ -107,18 +109,6 @@ public class Container {
             }
         });
 
-        VisiteSearch.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                super.keyTyped(e);
-            }
-        });
-        medecinSearch.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                super.keyTyped(e);
-            }
-        });
     }
     private void afficherMedecin(){
         List<Medecin> medecins = medecinDAO.findAll();
@@ -158,7 +148,30 @@ public class Container {
 
         VisiteTable.setModel(model);
     }
+//    searching setup
+    private void searchFilterSetup(JTextField searchField, JTable table){
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>((DefaultTableModel) table.getModel());
+        table.setRowSorter(sorter);
 
+        searchField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+//                super.keyTyped(e);
+                String searchedText = searchField.getText().trim();
+                if(searchedText.isEmpty()){
+                    sorter.setRowFilter(null);
+                }else {
+                    sorter.setRowFilter(RowFilter.regexFilter("(?i)"+ searchedText));
+                }
+            }
+        });
+    }
+
+    private void searchFunction(){
+        searchFilterSetup(medecinSearch, medecinTable);
+        searchFilterSetup(patientSearch, patientTable);
+        searchFilterSetup(VisiteSearch, VisiteTable);
+    }
 //    popup setup
     private void popupMenuSetup(JTable table, String tableName){
         JMenuItem editItem = new JMenuItem("Modifier");
