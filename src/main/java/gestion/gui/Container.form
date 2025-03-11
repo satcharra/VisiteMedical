@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gestion.gui.Container">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="724" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="40bfd" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-262657"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="c571b" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-4302459"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="6f6d1" class="javax.swing.JButton" binding="VisiteBtn">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-4302459"/>
+                  <foreground color="-1282"/>
+                  <text value="Visite"/>
+                </properties>
+              </component>
+              <component id="a1f5e" class="javax.swing.JButton" binding="PatientBtn">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-4302459"/>
+                  <foreground color="-262657"/>
+                  <text value="Patient"/>
+                </properties>
+              </component>
+              <component id="b53e2" class="javax.swing.JButton" binding="MedecinBtn">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-4302459"/>
+                  <foreground color="-1282"/>
+                  <text value="Medecin"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="dded6" binding="parentPanel" layout-manager="CardLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <grid id="14bcf" binding="VisitePanel" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <card name="Card1"/>
+                </constraints>
+                <properties>
+                  <background color="-262657"/>
+                  <font name="Arial"/>
+                  <foreground color="-16777216"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <scrollpane id="bf2e1">
+                    <constraints>
+                      <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-1282"/>
+                      <foreground color="-1282"/>
+                    </properties>
+                    <border type="none" title="Visite"/>
+                    <children>
+                      <component id="b3f51" class="javax.swing.JTable" binding="VisiteTable">
+                        <constraints/>
+                        <properties>
+                          <background color="-4614"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </scrollpane>
+                  <component id="ad353" class="javax.swing.JTextField" binding="VisiteSearch">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-4614"/>
+                    </properties>
+                  </component>
+                  <component id="6d7e6" class="javax.swing.JButton" binding="searchVisiteBtn">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14328008"/>
+                      <foreground color="-1282"/>
+                      <text value="Rechercher"/>
+                    </properties>
+                  </component>
+                  <component id="852db" class="javax.swing.JButton" binding="nouveauVisiteButton">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14328008"/>
+                      <foreground color="-262657"/>
+                      <text value="Nouveau"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="eb37a" binding="PatientPanel" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <card name="Card2"/>
+                </constraints>
+                <properties>
+                  <background color="-262657"/>
+                  <font name="Arial"/>
+                  <foreground color="-16777216"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <scrollpane id="bcd7e">
+                    <constraints>
+                      <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-4302459"/>
+                      <foreground color="-1282"/>
+                    </properties>
+                    <border type="none" title="Patient"/>
+                    <children>
+                      <component id="5fda0" class="javax.swing.JTable" binding="patientTable">
+                        <constraints/>
+                        <properties>
+                          <background color="-4614"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </scrollpane>
+                  <component id="27ea1" class="javax.swing.JTextField" binding="patientSearch">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-4614"/>
+                    </properties>
+                  </component>
+                  <component id="8e57f" class="javax.swing.JButton">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14328008"/>
+                      <foreground color="-1282"/>
+                      <text value="Rechercher"/>
+                    </properties>
+                  </component>
+                  <component id="8fe2e" class="javax.swing.JButton" binding="nouveauPatientButton">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14328008"/>
+                      <foreground color="-262657"/>
+                      <text value="Nouveau"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="c8ca9" binding="MedecinPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <card name="Card3"/>
+                </constraints>
+                <properties>
+                  <background color="-1576740"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <scrollpane id="7f37d">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-4302459"/>
+                      <foreground color="-1282"/>
+                    </properties>
+                    <border type="none" title="Medecin"/>
+                    <children>
+                      <component id="f4934" class="javax.swing.JTable" binding="medecinTable">
+                        <constraints/>
+                        <properties>
+                          <background color="-4614"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </scrollpane>
+                  <component id="49a80" class="javax.swing.JTextField" binding="medecinSearch">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-4614"/>
+                    </properties>
+                  </component>
+                  <component id="af123" class="javax.swing.JButton">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14328008"/>
+                      <foreground color="-1282"/>
+                      <text value="Rechercher"/>
+                    </properties>
+                  </component>
+                  <component id="7662a" class="javax.swing.JButton" binding="nouveauMedecinButton">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14328008"/>
+                      <foreground color="-262657"/>
+                      <text value="Nouveau"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
