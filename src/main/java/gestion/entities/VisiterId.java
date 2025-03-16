@@ -1,9 +1,6 @@
 package gestion.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,44 +8,33 @@ import java.util.Objects;
 
 @Embeddable
 public class VisiterId implements Serializable {
-    @Column(name = "codemed")
-    private String codeMed;
-    @Column(name = "codepat")
-    private String codePat;
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "date")
-    private Date date;
+    @ManyToOne(fetch =  FetchType.LAZY)
+    @JoinColumn(name = "codemed", nullable = false)
+    private Medecin medecin;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "codepat", nullable = false)
+    private Patient patient;
 
     public VisiterId() {}
 
-    public VisiterId(String codeMed, String codePat, Date date) {
-        this.codeMed = codeMed;
-        this.codePat = codePat;
-        this.date = date;
+    public VisiterId(Medecin medecin, Patient patient){
+        this.medecin = medecin;
+        this.patient = patient;
+    }
+    public Medecin getMedecin() {
+        return medecin;
     }
 
-    public String getCodeMed() {
-        return codeMed;
+    public void setMedecin(Medecin medecin) {
+        this.medecin = medecin;
     }
 
-    public void setCodeMed(String codeMed) {
-        this.codeMed = codeMed;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public String getCodePat() {
-        return codePat;
-    }
-
-    public void setCodePat(String codePat) {
-        this.codePat = codePat;
-    }
-
-    public Date getDateVisite() {
-        return date;
-    }
-
-    public void setDateVisite(Date dateVisite) {
-        this.date = dateVisite;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
     @Override
@@ -56,13 +42,11 @@ public class VisiterId implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VisiterId visiterId = (VisiterId) o;
-        return Objects.equals(codePat, visiterId.codePat) && Objects.equals(codeMed, visiterId.codeMed) &&
-                Objects.equals(date, visiterId.date);
+        return medecin.equals(visiterId.medecin) && patient.equals(visiterId.patient);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codePat, codeMed, date);
+        return Objects.hash(medecin, patient);
     }
-
 }

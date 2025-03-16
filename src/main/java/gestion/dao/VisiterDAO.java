@@ -1,5 +1,6 @@
 package gestion.dao;
 
+import gestion.entities.Medecin;
 import gestion.entities.Visiter;
 import gestion.entities.VisiterId;
 import gestion.util.HibernateUtil;
@@ -26,10 +27,9 @@ public class VisiterDAO {
         }
     }
 
-    public void delete(String codeMed, String codePat, Date dateVisite){
+    public void delete(VisiterId id){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             Transaction tx = session.beginTransaction();
-            VisiterId id = new VisiterId(codeMed, codePat, dateVisite);
             Visiter visiter = session.get(Visiter.class, id);
             if(visiter != null){
                 session.remove(visiter);
@@ -37,7 +37,11 @@ public class VisiterDAO {
             tx.commit();
         }
     }
-
+    public Visiter find(VisiterId id) {
+        try(Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.get(Visiter.class, id);
+        }
+    }
     public List<Visiter> findAll(){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             return session.createQuery("FROM Visiter ", Visiter.class).list();

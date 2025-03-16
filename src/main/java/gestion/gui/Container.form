@@ -127,7 +127,7 @@
                   </component>
                 </children>
               </grid>
-              <grid id="eb37a" binding="PatientPanel" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="eb37a" binding="PatientPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <card name="Card2"/>
@@ -141,7 +141,7 @@
                 <children>
                   <scrollpane id="bcd7e">
                     <constraints>
-                      <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                      <grid row="1" column="1" row-span="2" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-4302459"/>
@@ -159,7 +159,7 @@
                   </scrollpane>
                   <component id="27ea1" class="javax.swing.JTextField" binding="patientSearch">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="150" height="-1"/>
                       </grid>
                     </constraints>
@@ -167,19 +167,9 @@
                       <background color="-4614"/>
                     </properties>
                   </component>
-                  <component id="8e57f" class="javax.swing.JButton">
-                    <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <background color="-14328008"/>
-                      <foreground color="-1282"/>
-                      <text value="Rechercher"/>
-                    </properties>
-                  </component>
                   <component id="8fe2e" class="javax.swing.JButton" binding="nouveauPatientButton">
                     <constraints>
-                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-14328008"/>
@@ -187,9 +177,19 @@
                       <text value="Nouveau"/>
                     </properties>
                   </component>
+                  <component id="906ca" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-1282"/>
+                      <foreground color="-16777216"/>
+                      <text value="Rechercher:"/>
+                    </properties>
+                  </component>
                 </children>
               </grid>
-              <grid id="c8ca9" binding="MedecinPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="c8ca9" binding="MedecinPanel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <card name="Card3"/>
@@ -201,7 +201,7 @@
                 <children>
                   <scrollpane id="7f37d">
                     <constraints>
-                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-4302459"/>
@@ -219,7 +219,7 @@
                   </scrollpane>
                   <component id="49a80" class="javax.swing.JTextField" binding="medecinSearch">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="150" height="-1"/>
                       </grid>
                     </constraints>
@@ -227,24 +227,24 @@
                       <background color="-4614"/>
                     </properties>
                   </component>
-                  <component id="af123" class="javax.swing.JButton">
-                    <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <background color="-14328008"/>
-                      <foreground color="-1282"/>
-                      <text value="Rechercher"/>
-                    </properties>
-                  </component>
                   <component id="7662a" class="javax.swing.JButton" binding="nouveauMedecinButton">
                     <constraints>
-                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-14328008"/>
                       <foreground color="-262657"/>
                       <text value="Nouveau"/>
+                    </properties>
+                  </component>
+                  <component id="317f9" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-4614"/>
+                      <foreground color="-16777216"/>
+                      <text value="Rechercher :"/>
                     </properties>
                   </component>
                 </children>

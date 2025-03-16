@@ -6,6 +6,7 @@ import gestion.dao.VisiterDAO;
 import gestion.entities.Medecin;
 import gestion.entities.Patient;
 import gestion.entities.Visiter;
+import gestion.entities.VisiterId;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -49,6 +50,7 @@ public class Container {
                 parentPanel.add(VisitePanel);
                 parentPanel.repaint();
                 parentPanel.revalidate();
+                afficherVisite();
             }
         });
         PatientBtn.addActionListener(new ActionListener() {
@@ -88,6 +90,7 @@ public class Container {
                 VisiteForm dialog = new VisiteForm();
                 dialog.setLocationRelativeTo(null);
                 dialog.setVisible(true);
+                afficherVisite();
             }
         });
         nouveauPatientButton.addActionListener(new ActionListener() {
@@ -105,7 +108,6 @@ public class Container {
                 MedecinForm dialog = new MedecinForm("add", null);
                 dialog.setLocationRelativeTo(null);
                 dialog.setVisible(true);
-                afficherMedecin();
             }
         });
 
@@ -142,7 +144,7 @@ public class Container {
         String[] colonnes = {"Date", "Medecin", "Patient"};
         DefaultTableModel model = new DefaultTableModel(colonnes, 0);
         for(Visiter v: visiteurs){
-            Object[] ligne = {v.getDateVisite(), v.getId().getCodeMed(), v.getId().getCodePat()};
+            Object[] ligne = {v.getDateVisite(), v.getId().getMedecin().getCodeMed(), v.getId().getPatient().getCodePat()};
             model.addRow(ligne);
         }
 
@@ -190,7 +192,7 @@ public class Container {
                 break;
             case "visite":
                 table.setComponentPopupMenu(popupMenuVisite);
-                popupMenuVisite.add(editItem);
+//                popupMenuVisite.add(editItem);
                 popupMenuVisite.add(deleteItem);
                 break;
         }
@@ -247,10 +249,23 @@ public class Container {
                 case "medecin":
                     String code = model.getValueAt(selectedRow, 0).toString();
                     medecinDAO.delete(code);
+                    afficherMedecin();
                     break;
                 case "patient":
                     code = model.getValueAt(selectedRow, 0).toString();
                     patientDAO.delete(code);
+                    afficherPatient();
+                    break;
+                case "visite":
+                    String codeMed = model.getValueAt(selectedRow,1).toString();
+                    String codePat = model.getValueAt(selectedRow, 2).toString();
+
+                    Medecin medecin = medecinDAO.findByCode(codeMed);
+                    Patient patient = patientDAO.findByCode(codePat);
+                    VisiterId visiterId = new VisiterId(medecin, patient);
+
+                    visiterDAO.delete(visiterId);
+                    afficherVisite();
                     break;
             }
         }

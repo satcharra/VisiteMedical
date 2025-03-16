@@ -20,7 +20,7 @@ public class Medecin {
     @Column(length = 50)
     private String grade;
 
-    @OneToMany(mappedBy = "medecin", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "id.medecin", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Visiter> visiters;
 
 

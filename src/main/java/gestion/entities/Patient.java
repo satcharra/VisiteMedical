@@ -22,7 +22,7 @@ public class Patient {
     @Column(name = "adresse",length = 255)
     private String adresse;
 
-    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "id.patient", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Visiter> visiters;
 
     public Patient() {}

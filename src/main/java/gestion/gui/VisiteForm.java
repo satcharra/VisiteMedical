@@ -6,6 +6,7 @@ import gestion.dao.VisiterDAO;
 import gestion.entities.Medecin;
 import gestion.entities.Patient;
 import gestion.entities.Visiter;
+import gestion.entities.VisiterId;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 import javax.swing.*;
@@ -98,6 +99,7 @@ public class VisiteForm extends JDialog {
 
         Patient patient = patientDAO.findByCode(codePat);
         Medecin medecin = medecinDAO.findByCode(codeMed);
+        VisiterId id = new VisiterId(medecin, patient);
 
         // 5. Vérification des objets trouvés
         if(medecin == null || patient == null) {
@@ -108,7 +110,7 @@ public class VisiteForm extends JDialog {
             return;
         }
 
-        Visiter visite = new Visiter(patient, medecin, currentDate);
+        Visiter visite = new Visiter(id, currentDate);
         visiterDAO.save(visite);
 
         JOptionPane.showMessageDialog(this,
