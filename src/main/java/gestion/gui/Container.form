@@ -73,7 +73,7 @@
                   <card name="Card1"/>
                 </constraints>
                 <properties>
-                  <background color="-262657"/>
+                  <background color="-1"/>
                   <font name="Arial"/>
                   <foreground color="-16777216"/>
                 </properties>
@@ -84,10 +84,10 @@
                       <grid row="1" column="1" row-span="2" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <background color="-1282"/>
+                      <background color="-1576740"/>
                       <foreground color="-1282"/>
                     </properties>
-                    <border type="none" title="Visite"/>
+                    <border type="none" title=""/>
                     <children>
                       <component id="b3f51" class="javax.swing.JTable" binding="VisiteTable">
                         <constraints/>
@@ -144,10 +144,10 @@
                       <grid row="1" column="1" row-span="2" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <background color="-4302459"/>
+                      <background color="-1576740"/>
                       <foreground color="-1282"/>
                     </properties>
-                    <border type="none" title="Patient"/>
+                    <border type="none" title=""/>
                     <children>
                       <component id="5fda0" class="javax.swing.JTable" binding="patientTable">
                         <constraints/>
@@ -195,7 +195,7 @@
                   <card name="Card3"/>
                 </constraints>
                 <properties>
-                  <background color="-1576740"/>
+                  <background color="-262657"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -204,10 +204,10 @@
                       <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <background color="-4302459"/>
+                      <background color="-1576740"/>
                       <foreground color="-1282"/>
                     </properties>
-                    <border type="none" title="Medecin"/>
+                    <border type="none" title=""/>
                     <children>
                       <component id="f4934" class="javax.swing.JTable" binding="medecinTable">
                         <constraints/>

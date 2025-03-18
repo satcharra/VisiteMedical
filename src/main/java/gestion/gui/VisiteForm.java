@@ -99,7 +99,7 @@ public class VisiteForm extends JDialog {
 
         Patient patient = patientDAO.findByCode(codePat);
         Medecin medecin = medecinDAO.findByCode(codeMed);
-        VisiterId id = new VisiterId(medecin, patient);
+        VisiterId id = new VisiterId(medecin, patient, currentDate);
 
         // 5. Vérification des objets trouvés
         if(medecin == null || patient == null) {
@@ -110,7 +110,7 @@ public class VisiteForm extends JDialog {
             return;
         }
 
-        Visiter visite = new Visiter(id, currentDate);
+        Visiter visite = new Visiter(id);
         visiterDAO.save(visite);
 
         JOptionPane.showMessageDialog(this,
@@ -131,5 +131,4 @@ public class VisiteForm extends JDialog {
         dialog.setVisible(true);
         System.exit(0);
     }
-
 }

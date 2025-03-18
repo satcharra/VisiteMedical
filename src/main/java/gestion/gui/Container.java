@@ -12,7 +12,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.event.*;
+import java.util.Date;
 import java.util.List;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 
 public class Container {
     private JPanel panel1;
@@ -50,7 +53,7 @@ public class Container {
                 parentPanel.add(VisitePanel);
                 parentPanel.repaint();
                 parentPanel.revalidate();
-                afficherVisite();
+//                afficherVisite();
             }
         });
         PatientBtn.addActionListener(new ActionListener() {
@@ -144,7 +147,8 @@ public class Container {
         String[] colonnes = {"Date", "Medecin", "Patient"};
         DefaultTableModel model = new DefaultTableModel(colonnes, 0);
         for(Visiter v: visiteurs){
-            Object[] ligne = {v.getDateVisite(), v.getId().getMedecin().getCodeMed(), v.getId().getPatient().getCodePat()};
+            Object[] ligne = {v.getId().getDateVisite(), v.getId().getMedecin().getCodeMed(), v.getId().getPatient().getCodePat()};
+            System.out.println(v.getId().getDateVisite()+" "+ v.getId().getMedecin().getCodeMed()+" "+ v.getId().getPatient().getCodePat());
             model.addRow(ligne);
         }
 
@@ -259,10 +263,20 @@ public class Container {
                 case "visite":
                     String codeMed = model.getValueAt(selectedRow,1).toString();
                     String codePat = model.getValueAt(selectedRow, 2).toString();
+                    String dateVisite = model.getValueAt(selectedRow, 3).toString();
 
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                    Date dateVisite1 = null;
+                    try {
+                        dateVisite1 = sdf.parse(dateVisite);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Format de date invalide ! Utilisez yyyy-MM-dd");
+                        throw new RuntimeException(e);
+                    }
                     Medecin medecin = medecinDAO.findByCode(codeMed);
                     Patient patient = patientDAO.findByCode(codePat);
-                    VisiterId visiterId = new VisiterId(medecin, patient);
+                    VisiterId visiterId = new VisiterId(medecin, patient, dateVisite1);
 
                     visiterDAO.delete(visiterId);
                     afficherVisite();

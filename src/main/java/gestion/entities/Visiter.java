@@ -10,15 +10,12 @@ import java.util.Objects;
 public class Visiter {
     @EmbeddedId
     private VisiterId id;
-    @Temporal(TemporalType.DATE)
-    @Column(name = "date", nullable = false)
-    private Date dateVisite;
 
     public Visiter() {}
 
-    public Visiter(VisiterId id, Date dateVisite) {
+    public Visiter(VisiterId id) {
         this.id = id;
-        this.dateVisite = dateVisite;
+//        this.dateVisite = dateVisite;
     }
 
     public VisiterId getId() {
@@ -27,14 +24,6 @@ public class Visiter {
 
     public void setId(VisiterId id) {
         this.id = id;
-    }
-
-    public Date getDateVisite() {
-        return dateVisite;
-    }
-
-    public void setDateVisite(Date dateVisite) {
-        this.dateVisite = dateVisite;
     }
     //    @Override
 //    public boolean equals(Object o) {
