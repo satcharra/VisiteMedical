@@ -92,6 +92,7 @@ public class Container {
             public void actionPerformed(ActionEvent e) {
                 VisiteForm dialog = new VisiteForm();
                 dialog.setLocationRelativeTo(null);
+                dialog.setSize(400, 150);
                 dialog.setVisible(true);
                 afficherVisite();
             }
@@ -101,6 +102,7 @@ public class Container {
             public void actionPerformed(ActionEvent e) {
                 PatientForm dialog = new PatientForm("add", null);
                 dialog.setLocationRelativeTo(null);
+                dialog.setSize(500, 250);
                 dialog.setVisible(true);
                 afficherPatient();
             }
@@ -110,6 +112,7 @@ public class Container {
             public void actionPerformed(ActionEvent e) {
                 MedecinForm dialog = new MedecinForm("add", null);
                 dialog.setLocationRelativeTo(null);
+                dialog.setSize(500, 250);
                 dialog.setVisible(true);
             }
         });

@@ -79,11 +79,17 @@ public class PatientForm extends JDialog {
         Patient patient = new Patient(code, nom, prenom, sexe, adresse);
 
         if(isUpdate){
-            System.out.println("update the outdate");
             patientDAO.update(patient);
+            JOptionPane.showMessageDialog(this,
+                    "Modification(s) enregistrée(s) avec succès !",
+                    "Succès",
+                    JOptionPane.INFORMATION_MESSAGE);
         }else{
             patientDAO.save(patient);
-            System.out.println("Patient ajouter");
+            JOptionPane.showMessageDialog(this,
+                    "Patient enregistrée avec succès !",
+                    "Succès",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
 
         dispose();

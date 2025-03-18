@@ -75,9 +75,16 @@ public class MedecinForm extends JDialog {
         if(isUpdate){
             System.out.println("update the outdate");
             medecinDAO.update(medecin);
+            JOptionPane.showMessageDialog(this,
+                    "Modification(s) enregistrée(s) avec succès !",
+                    "Succès",
+                    JOptionPane.INFORMATION_MESSAGE);
         }else{
             medecinDAO.save(medecin);
-            System.out.println("Ajouter ve");
+            JOptionPane.showMessageDialog(this,
+                    "Medecin enregistrée avec succès !",
+                    "Succès",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
         dispose();
     }

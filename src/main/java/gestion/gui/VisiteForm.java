@@ -60,6 +60,16 @@ public class VisiteForm extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        patientbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PatientForm dialog = new PatientForm("add", null);
+                dialog.setLocationRelativeTo(null);
+                dialog.setSize(500, 250);
+                dialog.setVisible(true);
+                initializeComboBox();
+            }
+        });
     }
 
     private void initializeComboBox(){
